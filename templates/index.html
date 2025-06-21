@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Profit Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Company Profit Predictor</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="csv_file">Or Upload CSV File:</label>
+            <input type="file" id="csv_file" name="csv_file" accept=".csv">
+
+            <label for="rnd_spend">R&amp;D Spend:</label>
+            <input type="number" id="rnd_spend" name="rnd_spend" required>
+
+            <label for="admin_cost">Administration Cost:</label>
+            <input type="number" id="admin_cost" name="admin_cost" required>
+
+            <label for="marketing_spend">Marketing Spend:</label>
+            <input type="number" id="marketing_spend" name="marketing_spend" required>
+
+            <button type="submit">Predict Profit</button>
+        </form>
+
+        {% if profit %}
+            <div class="result">{{ profit | safe }}</div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='disable_form_on_csv.js') }}"></script>
+</body>
+</html>
