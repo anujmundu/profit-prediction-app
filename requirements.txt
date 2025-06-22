@@ -171,7 +171,6 @@ soupsieve==2.7
 spacy==3.5.4
 spacy-legacy==3.0.12
 spacy-loggers==1.0.5
-SpeechRecognition==3.14.3
 srsly==2.5.1
 stack-data==0.6.3
 sympy==1.13.1
