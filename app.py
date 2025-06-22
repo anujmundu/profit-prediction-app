@@ -13,6 +13,7 @@ scaler = joblib.load("scaler.pkl")
 @app.route("/", methods=["GET", "POST"])
 def predict():
     profit = None
+    summary = None
     if request.method == "POST":
         print("FILES:", request.files)
         try:
