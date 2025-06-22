@@ -49,13 +49,25 @@ def predict():
 
             if prediction < 0:
                 profit = f"🔴 Predicted Loss: ₹{round(abs(prediction), 2)}"
+                summary = (
+                    f"The input values suggest a potential loss of ₹{round(abs(prediction), 2)}. "
+                    "Consider reviewing expenses or adjusting the spending mix."
+                )
+            elif prediction < 100:
+                profit = f"🟡 Predicted Profit: ₹{round(prediction, 2)}"
+                summary = (
+                    f"Expecting a modest profit of ₹{round(prediction, 2)}. Increasing marketing or R&D might help scale results."
+                )
             else:
                 profit = f"🟢 Predicted Profit: ₹{round(prediction, 2)}"
+                summary = (
+                    f"Great! You're on track to earn ₹{round(prediction, 2)} in profit — this combination seems effective."
+                )
 
         except Exception as e:
             profit = f"❌ Something went wrong: {str(e)}"
 
-    return render_template("index.html", profit=profit)
+    return render_template("index.html", profit=profit, summary=summary)
 
 
 if __name__ == "__main__":

@@ -27,6 +27,10 @@
         {% if profit %}
             <div class="result">{{ profit | safe }}</div>
         {% endif %}
+        {% if summary %}
+            <div class="summary"><strong>Summary:</strong> {{ summary }}</div>
+        {% endif %}
+
     </div>
     <script src="{{ url_for('static', filename='disable_form_on_csv.js') }}"></script>
 </body>

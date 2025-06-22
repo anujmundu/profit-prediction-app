@@ -20,6 +20,14 @@ body {
     backdrop-filter: blur(8px);
 }
 
+.summary {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-left: 5px solid #4CAF50;
+    font-style: italic;
+}
+
 input[type="number"] {
     background-color: rgba(255, 255, 255, 0.8);
     color: #111;
